@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://cdn.botframework.com/botframework-webchat/latest/botchat.css" rel="stylesheet">
+    <style>
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            color:white;
+        }
+        .wc-messages-groups {
+            background: cornsilk; 
+        }
+        .wc-console.has-upload-button {
+            background: antiquewhite;
+        }
+    </style>
+    </head>
+    <div id='chatbot' style='width: 400px; height:500px; margin:10px; position: fixed; bottom:0; right:0; z-index:1000;'>
+        <div id='botTitleBar' style='height:400px; width:400px; position:fixed; cursor:pointer;'></div>
+     </div>
+     <script src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js"></script> <!-- end footer -->
+     <script>
+        <h3> Kurakani Bot for emergency Response</h3>
+        const params = BotChat.queryParams(location.search);
+        var chatLocale = params['locale'] || windows.navigator.language;
+        BotChat.App({
+           directline: { secret: 's3ooBPSfges.Q3-UYnsPy9T44vaQjEvq3o_X2-dl_JhruLsRBYtJ3cQ' },
+           user: { id: 'user' },
+           bot: { id: 'oldpinehokaa-bot' },
+           locale: chatLocale,
+           resize: 'detect'
+        }, document.getElementById("botDiv"))
+     </script>
+  </body>
+</html>
